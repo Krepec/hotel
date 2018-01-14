@@ -1,17 +1,19 @@
 
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class App {
 
     public static void main(String[] args) throws SQLException {
         //get hired data persons
+        List<Integer> roomNumpers = new ArrayList<>();
         Employers employers = new Employers();
-
+        Rooms rooms = new Rooms();
 
         while (employers.resultSet.next()){
 
@@ -19,6 +21,13 @@ public class App {
 
         }
 
+        while (rooms.resultSet.next()){
+          //  System.out.println(rooms.resultSet.getString(1));
+            roomNumpers.add(rooms.resultSet.getInt(1));
+        }
+
+
+        System.out.println(roomNumpers);
        }
 
 
