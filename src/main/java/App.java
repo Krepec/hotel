@@ -2,35 +2,36 @@
 
 
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) throws SQLException {
+
+
         //get hired data persons
-        List<Integer> roomNumpers = new ArrayList<>();
+        Rooms getInfoAboutRooms = new Rooms();
         Employers employers = new Employers();
-        Rooms rooms = new Rooms();
+        employers.showAllEmployers();
 
-        while (employers.resultSet.next()){
+        //wywolanie metody ktoar pobiera dane na podstawie nr pokoju
+        System.out.println("Podaj nr pojou: ");
+        Scanner scanner = new Scanner(System.in);
+        String inputRoomNumber = scanner.nextLine();
+        getInfoAboutRooms.getInfoAboutRoomByRoomNumber(inputRoomNumber);
 
-            System.out.println("Imie: "+employers.resultSet.getString("name")+"\nNazwisko: "+employers.resultSet.getString("surname")+"\nWynagrodzenie: "+employers.resultSet.getFloat("salary")+" pln brutto"+"\nStanowisko: "+employers.resultSet.getString("position")+"\nData zatrudnienia: "+employers.resultSet.getString("hire_date")+"\n\n");
+        //wywolanie metody ktora pobiera dane o wszystkich pokojach
+        getInfoAboutRooms.getInfoAllRooms();
 
-        }
-
-        while (rooms.resultSet.next()){
-          //  System.out.println(rooms.resultSet.getString(1));
-            roomNumpers.add(rooms.resultSet.getInt(1));
-        }
-
-
-        System.out.println(roomNumpers);
-       }
+        //wywolanie metody ktora pokaze wszystkie wolne lub zajete pokoje
+        System.out.println("Podaj zajety lub wolny");
+        getInfoAboutRooms.showAllFreeRooms(scanner.nextLine());
 
 
+    }
 }
 
 

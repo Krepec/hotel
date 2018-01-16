@@ -9,9 +9,19 @@ public class Employers {
     ResultSet resultSet = preparedStatement.executeQuery();
 
 
+    public void showAllEmployers() throws SQLException {
 
 
+        while (resultSet.next()) {
+
+            System.out.println("Imie: " + resultSet.getString("name") + "\nNazwisko: " + resultSet.getString("surname") + "\nWynagrodzenie: " + resultSet.getFloat("salary") + " pln brutto" + "\nStanowisko: " + resultSet.getString("position") + "\nData zatrudnienia: " + resultSet.getString("hire_date") + "\n\n");
+
+        }
+
+
+    }
 
     public Employers() throws SQLException {
     }
+
 }
