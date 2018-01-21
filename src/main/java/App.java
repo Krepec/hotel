@@ -1,6 +1,7 @@
 import hotel.Employer;
 import hotel.Reception;
 import hotel.Room;
+import restaurant.Order;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -11,13 +12,13 @@ public class App {
 
 
         //ustworzenie uchwytow(refenecjii) do klas
-        Reception reception = new Reception();
-        Room getInfoAboutRooms = new Room();
-        Employer employers = new Employer();
-        Scanner scanner = new Scanner(System.in);
-//        reception.changeAvailableRoom();
+//        Reception reception = new Reception();
+//        Room getInfoAboutRooms = new Room();
+//        Employer employers = new Employer();
+//        Scanner scanner = new Scanner(System.in);
+//        reception.checkInAndOut();
 
-        //wywolanie metody ktora zwraca informacje o wszystkich pracownikach
+   /*  //wywolanie metody ktora zwraca informacje o wszystkich pracownikach
         employers.showAllEmployers();
 
        //wywolanie metody ktora pobiera dane na podstawie nr pokoju
@@ -32,7 +33,10 @@ public class App {
         getInfoAboutRooms.showAllFreeOrBusyRooms("wolny");
 
         //wywolanie metody ktora pokaze wszystkie zajete pokoje
-        getInfoAboutRooms.showAllFreeOrBusyRooms("zajety");
+        getInfoAboutRooms.showAllFreeOrBusyRooms("zajety");*/
+
+        Order order = new Order();
+        order.takeOrder();
     }
 }
 
