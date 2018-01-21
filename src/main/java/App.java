@@ -1,10 +1,8 @@
-
-
-
+import hotel.Employer;
+import hotel.Reception;
+import hotel.Room;
 
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class App {
@@ -12,25 +10,29 @@ public class App {
     public static void main(String[] args) throws SQLException {
 
 
-        //get hired data persons
-        Rooms getInfoAboutRooms = new Rooms();
-        Employers employers = new Employers();
+        //ustworzenie uchwytow(refenecjii) do klas
+        Reception reception = new Reception();
+        Room getInfoAboutRooms = new Room();
+        Employer employers = new Employer();
+        Scanner scanner = new Scanner(System.in);
+//        reception.changeAvailableRoom();
+
+        //wywolanie metody ktora zwraca informacje o wszystkich pracownikach
         employers.showAllEmployers();
 
-        //wywolanie metody ktoar pobiera dane na podstawie nr pokoju
+       //wywolanie metody ktora pobiera dane na podstawie nr pokoju
         System.out.println("Podaj nr pojou: ");
-        Scanner scanner = new Scanner(System.in);
         String inputRoomNumber = scanner.nextLine();
         getInfoAboutRooms.getInfoAboutRoomByRoomNumber(inputRoomNumber);
 
         //wywolanie metody ktora pobiera dane o wszystkich pokojach
         getInfoAboutRooms.getInfoAllRooms();
 
-        //wywolanie metody ktora pokaze wszystkie wolne lub zajete pokoje
-        System.out.println("Podaj zajety lub wolny");
-        getInfoAboutRooms.showAllFreeRooms(scanner.nextLine());
+        //wywolanie metody ktora pokaze wszystkie wolne pokoje
+        getInfoAboutRooms.showAllFreeOrBusyRooms("wolny");
 
-
+        //wywolanie metody ktora pokaze wszystkie zajete pokoje
+        getInfoAboutRooms.showAllFreeOrBusyRooms("zajety");
     }
 }
 
