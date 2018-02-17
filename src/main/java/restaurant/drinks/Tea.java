@@ -16,4 +16,9 @@ public class Tea implements Dish {
     public String ingredients() {
         return "Herbata zielona, cukier, cytryna";
     }
+
+    @Override
+    public String toString() {
+        return dishName() + " - " + "Cena: " +price();
+    }
 }

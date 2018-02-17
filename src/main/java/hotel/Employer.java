@@ -11,7 +11,7 @@ public class Employer {
         ResultSet sqlQuery = connectionMySql.getConnection("select * from employers where name='Krzysztof'");
 
         while (sqlQuery.next()) {
-            System.out.println("Numer pokoju: " + sqlQuery.getInt("room_number") + "\n" + "Cena za pokoj: " + sqlQuery.getDouble("price") + " pln brutto" + "\nDostepnosc: " + sqlQuery.getString("available") + "\nLiczba osob: " + sqlQuery.getInt("persons") + "\nLazienka w pokoju: " + sqlQuery.getBoolean("bathroom") + "\n");
+            System.out.println("Imię: " + sqlQuery.getString("name") + "\n" + "Nazwisko:" + sqlQuery.getString("surname")  + "\nWynagrodzenie: " + sqlQuery.getInt("salary") + "\nStanowisko: " + sqlQuery.getString("position") + "\nData zatrudnienia: " + sqlQuery.getString("hire_date") + "\n");
 
         }
 

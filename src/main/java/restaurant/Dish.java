@@ -1,6 +1,6 @@
 package restaurant;
 
-public interface Dish {
+public interface    Dish {
 
     public Integer price();
 

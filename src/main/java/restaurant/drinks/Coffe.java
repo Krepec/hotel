@@ -16,4 +16,9 @@ public class Coffe implements Dish {
     public String ingredients() {
         return "Jacobs czarna";
     }
+
+    @Override
+    public String toString() {
+        return dishName() + " - " + "Cena: " +price();
+    }
 }

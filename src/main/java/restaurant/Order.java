@@ -1,10 +1,11 @@
 package restaurant;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Order {
+
+    List<Integer> summaryToPaid = new ArrayList<>();
 
     public void takeOrder() {
         AddDishToOrder addDishToOrder = new AddDishToOrder();
@@ -24,83 +25,28 @@ public class Order {
                 addDishToOrder.addDrinkToDishList(dishesList);
                 endOrder = false;
             } else if (selectedNumber == 3) {
-                System.out.println(dishesList.getDishesMenu());
-                endOrder = true;
+                System.out.println("Zamówiono: "+ dishesList.getDishesMenu());
+                endOrder = false;
             }
+            else if (selectedNumber == 4) {
+                for (Dish dishPrice : dishesList.getDishesMenu()){
+                    summaryToPaid.add(dishPrice.price());
+
+                }
+                Integer sum = 0;
+                for (Integer paidPrice : summaryToPaid)
+                    sum = sum + paidPrice;
+
+                System.out.println("Całkowita suma zapłaty wynosi: " + sum + " zł");
+
+            }
+
         }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*while (!startOrder) {
-            if (1 == selectNumber) {
-                System.out.println("Proszę wybrać danie obiadowe:\n1. Jajecznica\n2. Pizza\n3. Kanapka\n4. Kurczak z ziemniakami\n5. Powrót\n");
-
-
-                while (!selectOrder) {
-                    Integer selectDishNo = scanner.nextInt();
-                    if (selectDishNo == 1) {
-                        dishesList.addDish(new ScrambledEggs());
-                        selectOrder = false;
-                    } else if (selectDishNo == 2) {
-                        dishesList.addDish(new Pizza());
-                        selectOrder = false;
-                    } else if (selectDishNo == 3) {
-                        dishesList.addDish(new Sandwich());
-                        selectOrder = false;
-                    } else if (selectDishNo == 4) {
-                        dishesList.addDish(new ChickenWithPotatoes());
-                        selectOrder = false;
-                    } else if (selectDishNo == 5) {
-                        selectOrder = true;
-
-                    }
-                }
-
-            } else if (2 == selectNumber) {
-
-
-                while (!selectOrder) {
-                    System.out.println("Proszę wybrać napój:\n1. Herbata\n2. Kawa\n3. Powrót\n");
-                    Integer selectDishNo = scanner.nextInt();
-                    if (1 == selectDishNo) {
-                        dishesList.addDish(new Tea());
-                        selectOrder = false;
-                    } else if (2 == selectDishNo) {
-                        dishesList.addDish(new Coffe());
-                        selectOrder = false;
-                    }
-                    else   {
-                        selectOrder = true;
-                        break;
-                        }
-                }
-
-            } else if (3 == selectNumber) {
-                System.out.println(dishesList);
-            }
-
-        */
     }
+
 
 }
 

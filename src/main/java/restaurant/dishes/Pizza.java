@@ -15,4 +15,8 @@ public class Pizza implements Dish {
     public String ingredients() {
         return "Grube ciasto, ser chedar, sos pomidorowy, salami, oliwki";
     }
+    @Override
+    public String toString() {
+        return dishName() + " - " + "Cena: " +price();
+    }
 }

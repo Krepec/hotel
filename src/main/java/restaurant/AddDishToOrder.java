@@ -19,7 +19,6 @@ public class AddDishToOrder {
             Integer selectDishNo = inputNumber.nextInt();
             if (selectDishNo == 1) {
                 orderList.addDish(new ScrambledEggs());
-                System.out.println("d");
                 endAddDish = false;
             } else if (selectDishNo == 2) {
                 orderList.addDish(new Pizza());
@@ -54,7 +53,10 @@ public class AddDishToOrder {
                 endAddDish = true;
             }
         }
-    }}
+    }
+
+
+}
 
 
 

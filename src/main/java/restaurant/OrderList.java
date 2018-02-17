@@ -14,4 +14,13 @@ public class OrderList {
     public List<Dish> getDishesMenu() {
         return dishesMenu;
     }
+
+    public Integer getDishPrice(Dish dish){
+        return dish.price();
+    }
+
+
 }
+
+
+

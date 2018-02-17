@@ -16,4 +16,9 @@ public class ChickenWithPotatoes implements Dish {
     public String ingredients() {
         return "Smażona pierś kurczaka, ziemniaki, surowka z białej kapusty";
     }
+
+    @Override
+    public String toString() {
+        return dishName() + " - " + "Cena: " +price();
+    }
 }

@@ -15,6 +15,10 @@ public class ScrambledEggs implements Dish {
 
     @Override
     public String ingredients() {
-        return "2 jajka, szczypiorek, boczek";
+        return "2 jajka, szczypiorek, boczek"; }
+
+    @Override
+    public String toString() {
+        return dishName() + " - " + "Cena: " + price();
     }
 }
