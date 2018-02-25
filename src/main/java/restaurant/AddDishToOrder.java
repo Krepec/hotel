@@ -8,7 +8,7 @@ import restaurant.drinks.Tea;
 
 public class AddDishToOrder {
 
-    Scanner inputNumber = new Scanner(System.in);
+    private Scanner inputNumber = new Scanner(System.in);
 
     public void addDishToDishList(OrderList orderList) {
 

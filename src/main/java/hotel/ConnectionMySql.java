@@ -1,10 +1,12 @@
 package hotel;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
-
+@Component
 public class ConnectionMySql {
 
     // metoda tworzy polaczenie do lokalnej bazy mySql oraz
+
     public ResultSet getConnection(String statement) throws SQLException {
 
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel","root","1234");

@@ -7,7 +7,7 @@ import java.util.List;
 import static junit.framework.TestCase.assertEquals;
 
 public class EmployerTest {
-    ConnectionMySql connectionMySql = new ConnectionMySql();
+  private ConnectionMySql connectionMySql = new ConnectionMySql();
 
     @org.junit.Test
     //checking the values are correct and sql connection

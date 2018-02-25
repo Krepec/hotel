@@ -15,10 +15,6 @@ public class OrderList {
         return dishesMenu;
     }
 
-    public Integer getDishPrice(Dish dish){
-        return dish.price();
-    }
-
 
 }
 

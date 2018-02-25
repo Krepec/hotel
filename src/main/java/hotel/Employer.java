@@ -1,9 +1,12 @@
 package hotel;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.sql.*;
 
 public class Employer {
-    ConnectionMySql connectionMySql = new ConnectionMySql();
+    @Autowired
+    private ConnectionMySql connectionMySql;
 
 
     public void showAllEmployers() throws SQLException {
